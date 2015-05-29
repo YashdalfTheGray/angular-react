@@ -8,7 +8,6 @@
     <meta name="description" content="angular and react">
     <meta name="viewport" content="width=device-width">
 
-
 	<script src="lib/angular/angular.js"></script>
 	<script src="lib/react/react.js"></script>
 	<script src="angular-app.js"></script>
@@ -18,12 +17,20 @@
 <body ng-app="rectangular">
 	<h1>Angular + React</h1>
 	<hr>
-	<div ng-controller="MainCtrl">
+	<div ng-controller="SingleCtrl">
 		<h3>Simple rendering</h3>
 		<input ng-model="framework" />
 		<p></p>
-		<react-directive framework="framework"></react-directive>
+		<simple-render framework="framework"></simple-render>
 		Rendering with AngularJS - {{framework}}
+	</div>
+	<hr>
+	<div ng-controller="TableCtrl">
+		<h3>Table rendering</h3>
+		<button ng-click="switchRendering()">Switch Rendering to {{framework}}</button>
+		<p></p>
+		<ng-repeat-table data="data" ng-if="renderAngular"></ng-repeat-table>
+		<react-table-render data="data" ng-if="!renderAngular"></react-table-render>
 	</div>
 	<hr>
 </body>
