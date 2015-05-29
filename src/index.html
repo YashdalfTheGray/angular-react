@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Angular + React</title>
+    <meta name="description" content="angular and react">
+    <meta name="viewport" content="width=device-width">
+
+
+	<script src="lib/angular/angular.js"></script>
+	<script src="lib/react/react.js"></script>
+	<script src="angular-app.js"></script>
+	<script src="react-app.js"></script>
+
+</head>
+<body ng-app="rectangular">
+	<h1>Angular + React</h1>
+	<hr>
+	<div ng-controller="MainCtrl">
+		<h3>Simple rendering</h3>
+		<input ng-model="framework" />
+		<p></p>
+		<react-directive framework="framework"></react-directive>
+		Rendering with AngularJS - {{framework}}
+	</div>
+	<hr>
+</body>
+</html>
